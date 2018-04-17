@@ -1,0 +1,37 @@
+{
+  "name": "object-builder",
+  "version": "0.0.2",
+  "description": "Simple Typesafe Object builder for Typescript",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "tslint index.ts 'src/**/*.ts'",
+    "test": "npm run lint && mocha -r ts-node/register --reporter spec src/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkspks/object-builder.git"
+  },
+  "keywords": [
+    "typescript",
+    "spec",
+    "test",
+    "factory"
+  ],
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^5.0.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.1.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.4"
+  },
+  "author": "pkspks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkspks/object-builder/issues"
+  },
+  "homepage": "https://github.com/pkspks/object-builder#readme",
+  "dependencies": {}
+}
