@@ -13,7 +13,7 @@ class ObjectBuilderBase<T, K extends keyof T> {
         return this.fieldsToExclude.indexOf(field) === -1;
     }
 
-    private createNewObject(): T {
+    protected createNewObject(): T {
         return new this.createType();
     }
 
