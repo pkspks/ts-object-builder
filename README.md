@@ -4,3 +4,46 @@ Build status: [![CircleCI](https://circleci.com/gh/pkspks/object-builder.svg?sty
 
 
 Simple Type safe Object builder for Typescript
+
+
+##Installation
+
+`npm install ts-object-builder`
+
+
+##Usage
+
+###Build with fixed values
+```typescript
+class Sample {
+    numericField: number;
+    stringField: string;
+}
+
+class SampleObjectBuilder extends ObjectBuilder<Sample> {
+    constructor() {
+        super(Sample);
+    }
+}
+
+const obj = new SampleObjectBuilder()
+                .with('numericField', 123)
+                .with('stringField', 'awesome string')
+                .build();
+```
+
+###Build with functions to provide value
+```typescript
+const obj = new SampleObjectBuilder()
+                .with('numericField', 123)
+                .with('stringField', () => 'awesome string')
+                .build();
+```
+
+###Build multiple
+```typescript
+const objList = new SampleObjectBuilder()
+                .with('numericField', () => Math.random() * 1000000)
+                .with('stringField', 'awesome string')
+                .buildList(2);
+```
