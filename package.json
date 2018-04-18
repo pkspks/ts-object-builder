@@ -1,6 +1,6 @@
 {
   "name": "ts-object-builder",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple Typesafe Object builder for Typescript",
   "main": "index.ts",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pkspks/object-builder.git"
+    "url": "git+https://github.com/pkspks/ts-object-builder.git"
   },
   "keywords": [
     "typescript",
@@ -31,8 +31,8 @@
   "author": "pkspks",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pkspks/object-builder/issues"
+    "url": "https://github.com/pkspks/ts-object-builder/issues"
   },
-  "homepage": "https://github.com/pkspks/object-builder#readme",
+  "homepage": "https://github.com/pkspks/ts-object-builder#readme",
   "dependencies": {}
 }
