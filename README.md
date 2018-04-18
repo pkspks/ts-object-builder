@@ -47,3 +47,12 @@ const objList = new SampleObjectBuilder()
                 .with('stringField', 'awesome string')
                 .buildList(2);
 ```
+
+### Build without certain fields
+```typescript
+const objList = new SampleObjectBuilder()
+                .with('numericField', () => Math.random() * 1000000)
+                .with('stringField', 'awesome string')
+                .without('stringField')
+                .buildList(2);
+```
