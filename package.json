@@ -1,5 +1,5 @@
 {
-  "name": "object-builder",
+  "name": "ts-object-builder",
   "version": "0.0.2",
   "description": "Simple Typesafe Object builder for Typescript",
   "main": "index.ts",
