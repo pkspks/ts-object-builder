@@ -6,7 +6,7 @@ Build status: [![CircleCI](https://circleci.com/gh/pkspks/object-builder.svg?sty
 Simple Type safe Object builder for Typescript
 
 
-##Installation
+## Installation
 
 `npm install ts-object-builder`
 
