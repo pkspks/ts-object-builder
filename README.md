@@ -11,9 +11,9 @@ Simple Type safe Object builder for Typescript
 `npm install ts-object-builder`
 
 
-##Usage
+## Usage
 
-###Build with fixed values
+### Build with fixed values
 ```typescript
 class Sample {
     numericField: number;
@@ -32,7 +32,7 @@ const obj = new SampleObjectBuilder()
                 .build();
 ```
 
-###Build with functions to provide value
+### Build with functions to provide value
 ```typescript
 const obj = new SampleObjectBuilder()
                 .with('numericField', 123)
@@ -40,7 +40,7 @@ const obj = new SampleObjectBuilder()
                 .build();
 ```
 
-###Build multiple
+### Build multiple
 ```typescript
 const objList = new SampleObjectBuilder()
                 .with('numericField', () => Math.random() * 1000000)
