@@ -1,6 +1,7 @@
 # object-builder
 
 Build status: [![CircleCI](https://circleci.com/gh/pkspks/ts-object-builder.svg?style=svg)](https://circleci.com/gh/pkspks/ts-object-builder)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b322b07affdd35f2d2d0/maintainability)](https://codeclimate.com/github/pkspks/ts-object-builder/maintainability)
 
 Simple Typesafe Object builder for Typescript
 
