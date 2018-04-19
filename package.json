@@ -19,7 +19,8 @@
     "typescript",
     "spec",
     "test",
-    "factory"
+    "factory",
+    "angular"
   ],
   "files": [
     "dist"
