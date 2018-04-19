@@ -8,7 +8,7 @@ Simple Typesafe Object builder for Typescript
 
 ## Installation
 
-`npm install ts-object-builder`
+`npm install --save-dev ts-object-builder`
 
 
 ## Usage
