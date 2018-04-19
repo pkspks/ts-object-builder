@@ -1,6 +1,6 @@
 {
   "name": "ts-object-builder",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple Typesafe Object builder for Typescript",
   "main": "dist/index.js",
   "module": "dist/index.js",
