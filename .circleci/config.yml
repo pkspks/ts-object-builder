@@ -75,14 +75,22 @@ workflows:
   version: 2
   build-workflow:
     jobs:
-      - test
+      - test:
+          filters:
+            tags:
+              only: /.*/
       - build:
           requires:
             - test
+          filters:
+            tags:
+              only: /.*/
       - publish:
           requires:
             - test
             - build
           filters:
             tags:
-              only: /v[0-9]+(\.[0-9]+)*/
+              only: /^v[0-9]+(\.[0-9]+)*/
+            branches:
+              ignore: /.*/
