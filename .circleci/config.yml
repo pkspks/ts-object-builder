@@ -53,11 +53,11 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
+      - run: npm build
       - save_cache:
          paths:
            - dist
          key: v1-dist-{{ .Branch }}-{{ .Revision }}
-      - run: npm build
 
   publish:
     docker:
@@ -91,6 +91,6 @@ workflows:
             - build
           filters:
             tags:
-              only: /^v[0-9]+(\.[0-9]+)*/
+              only: /[0-9]+(\.[0-9]+)*/
             branches:
               ignore: /.*/
