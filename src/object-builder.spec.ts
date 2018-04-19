@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 import {describe, it} from 'mocha';
-import {ObjectBuilder} from './object-builder';
+import {ObjectBuilder} from './index';
 
 class Sample {
     numericField: number;

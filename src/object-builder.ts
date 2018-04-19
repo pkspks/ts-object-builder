@@ -1,4 +1,4 @@
-class ObjectBuilderBase<T, K extends keyof T> {
+export class ObjectBuilderBase<T, K extends keyof T> {
     private readonly values: Map<K, () => T[K]> = new Map<K, () => T[K]>();
     private readonly fieldsToExclude: Array<(keyof T)> = [];
 

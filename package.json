@@ -1,12 +1,15 @@
 {
   "name": "ts-object-builder",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Simple Typesafe Object builder for Typescript",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "lint": "tslint index.ts 'src/**/*.ts'",
-    "test": "npm run lint && mocha -r ts-node/register --reporter mocha-multi --reporter-options spec=-,xunit=./test-results/test-results.xml src/*.spec.ts"
+    "lint": "tslint 'src/**/*.ts'",
+    "test": "npm run lint && npm run test-only",
+    "test-only": "env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register --reporter mocha-multi --reporter-options spec=-,xunit=./test-results/test-results.xml src/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,9 @@
     "spec",
     "test",
     "factory"
+  ],
+  "files": [
+    "dist"
   ],
   "devDependencies": {
     "@types/chai": "^4.1.2",

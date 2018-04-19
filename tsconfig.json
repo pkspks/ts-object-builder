@@ -1,11 +1,33 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "outDir": "./dist",
-    "strict": true,
-    "strictNullChecks": false,
-    "esModuleInterop": true
+    "target": "ES5",
+    "module": "es2015",
+    "moduleResolution": "node",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "removeComments": false,
+    "types": [],
+    "lib": ["es2015"],
+    "noImplicitAny": false,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "outDir": "dist"
   },
-  "exclude": ["src/*.spec.ts"]
+  "files": [
+    "src/index.ts"
+  ],
+  "ignoreDiagnostics": [
+    2403,
+    2300,
+    2374,
+    2375
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": false
+  }
 }
