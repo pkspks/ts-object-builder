@@ -48,13 +48,12 @@ jobs:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           - v1-dependencies-
-
       - run: npm install
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-     - save_cache:
+      - save_cache:
          paths:
            - dist
          key: v1-dist-{{ .Branch }}-{{ .Revision }}
