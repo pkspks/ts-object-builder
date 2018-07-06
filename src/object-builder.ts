@@ -1,5 +1,5 @@
 export class ObjectBuilderBase<T, K extends keyof T> {
-    private readonly values: Map<K, () => T[K]> = new Map<K, () => T[K]>();
+    private readonly values: Map<K, (index: number) => T[K]> = new Map<K, (index: number) => T[K]>();
     private readonly fieldsToExclude: Array<(keyof T)> = [];
 
     constructor(protected createType: new (arg?: any) => T) {
@@ -13,11 +13,21 @@ export class ObjectBuilderBase<T, K extends keyof T> {
         return this.fieldsToExclude.indexOf(field) === -1;
     }
 
+    private buildForIndex(index: number = 0): T {
+      const obj = this.createNewObject();
+
+      this.fieldsToBuild.forEach((k) => {
+        obj[k] = this.values.get(k)(index);
+      });
+
+      return obj;
+    }
+
     protected createNewObject(): T {
         return new this.createType();
     }
 
-    with<KType extends K>(name: KType, value: (() => T[KType]) | T[KType]): this {
+    with<KType extends K>(name: KType, value: ((index: number) => T[KType]) | T[KType]): this {
         if (typeof value === 'function') {
             this.values.set(name, value);
         } else {
@@ -27,19 +37,13 @@ export class ObjectBuilderBase<T, K extends keyof T> {
     }
 
     build(): T {
-        const obj = this.createNewObject();
-
-        this.fieldsToBuild.forEach((k) => {
-            obj[k] = this.values.get(k)();
-        });
-
-        return obj;
+        return this.buildForIndex(0);
     }
 
     buildList(count: number): T[] {
         const list = [];
         for (let i = 0; i < count; i++) {
-            list.push(this.build());
+            list.push(this.buildForIndex(i));
         }
         return list;
     }

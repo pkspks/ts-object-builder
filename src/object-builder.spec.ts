@@ -5,6 +5,7 @@ import {ObjectBuilder} from './index';
 class Sample {
     numericField: number;
     stringField: string;
+    anotherStringField: string;
 }
 
 class SampleObjectBuilder extends ObjectBuilder<Sample> {
@@ -26,14 +27,18 @@ describe('ObjectBuilder', () => {
         const builder = new SampleObjectBuilder();
         const sampleValues = [123, 234];
         const objList = builder
-            .with('numericField', () => sampleValues.pop())
-            .with('stringField', 'sample string').buildList(2);
+        .with('numericField', () => sampleValues.pop())
+        .with('stringField', 'sample string')
+        .with('anotherStringField', (index) => `another sample string ${index}`)
+        .buildList(2);
 
         expect(objList).to.be.an('array').that.has.length(2);
         expect(objList[0].numericField).to.equal(234);
         expect(objList[0].stringField).to.equal('sample string');
+        expect(objList[0].anotherStringField).to.equal('another sample string 0');
         expect(objList[1].numericField).to.equal(123);
         expect(objList[1].stringField).to.equal('sample string');
+        expect(objList[1].anotherStringField).to.equal('another sample string 1');
     });
 
     it('should exclude fields', () => {
