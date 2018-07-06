@@ -48,6 +48,15 @@ const objList = new SampleObjectBuilder()
                 .buildList(2);
 ```
 
+
+### Build multiple with index
+```typescript
+const objList = new SampleObjectBuilder()
+                .with('numericField', () => Math.random() * 1000000)
+                .with('stringField',  (index: number) => `value ${index}`)
+                .buildList(2);
+```
+
 ### Build without certain fields
 ```typescript
 const objList = new SampleObjectBuilder()
