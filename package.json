@@ -7,6 +7,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "prepublish": "npm run build",
     "lint": "tslint 'src/**/*.ts'",
     "test": "npm run lint && npm run test-only",
     "test-only": "env TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register --reporter mocha-multi --reporter-options spec=-,xunit=./test-results/test-results.xml src/*.spec.ts"
