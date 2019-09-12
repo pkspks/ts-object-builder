@@ -4,8 +4,8 @@ export declare class ObjectBuilderBase<T, K extends keyof T> {
     private readonly fieldsToExclude;
     constructor(createType: new (arg?: any) => T);
     private readonly fieldsToBuild;
-    private isNotExcluded(field);
-    private buildForIndex(index?);
+    private isNotExcluded;
+    private buildForIndex;
     protected createNewObject(): T;
     with<KType extends K>(name: KType, value: ((index: number) => T[KType]) | T[KType]): this;
     build(): T;

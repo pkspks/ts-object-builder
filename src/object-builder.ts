@@ -29,7 +29,7 @@ export class ObjectBuilderBase<T, K extends keyof T> {
 
     with<KType extends K>(name: KType, value: ((index: number) => T[KType]) | T[KType]): this {
         if (typeof value === 'function') {
-            this.values.set(name, value);
+            this.values.set(name, value as ((index: number) => T[KType]));
         } else {
             this.values.set(name, () => value);
         }
