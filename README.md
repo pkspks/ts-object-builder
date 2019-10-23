@@ -30,6 +30,11 @@ const obj = new SampleObjectBuilder()
                 .with('numericField', 123)
                 .with('stringField', 'awesome string')
                 .build();
+// Builds:
+// {
+//      numericField: 123, 
+//      stringField: 'awesome string'
+// }
 ```
 
 ### Build with functions to provide value
@@ -38,6 +43,12 @@ const obj = new SampleObjectBuilder()
                 .with('numericField', 123)
                 .with('stringField', () => 'awesome string')
                 .build();
+
+// Builds:
+// {
+//      numericField: 123, 
+//      stringField: 'awesome string'
+// }
 ```
 
 ### Build multiple
@@ -46,6 +57,18 @@ const objList = new SampleObjectBuilder()
                 .with('numericField', () => Math.random() * 1000000)
                 .with('stringField', 'awesome string')
                 .buildList(2);
+
+// Builds:
+// [
+//  {
+//      numericField: 123, 
+//      stringField: 'awesome string'
+//  },
+//  {
+//      numericField: 234, 
+//      stringField: 'awesome string'
+//  }
+// ]
 ```
 
 
@@ -55,6 +78,18 @@ const objList = new SampleObjectBuilder()
                 .with('numericField', () => Math.random() * 1000000)
                 .with('stringField',  (index: number) => `value ${index}`)
                 .buildList(2);
+
+// Builds:
+// [
+//  {
+//      numericField: 123, 
+//      stringField: 'value 0'
+//  },
+//  {
+//      numericField: 234, 
+//      stringField: 'value 1'
+//  }
+// ]
 ```
 
 ### Build without certain fields
@@ -64,4 +99,14 @@ const objList = new SampleObjectBuilder()
                 .with('stringField', 'awesome string')
                 .without('stringField')
                 .buildList(2);
+
+// Builds:
+// [
+//  {
+//      numericField: 123
+//  },
+//  {
+//      numericField: 234
+//  }
+// ]
 ```
