@@ -3,7 +3,7 @@ export declare class ObjectBuilderBase<T, K extends keyof T> {
     private readonly values;
     private readonly fieldsToExclude;
     constructor(createType: new (arg?: any) => T);
-    private readonly fieldsToBuild;
+    private get fieldsToBuild();
     private isNotExcluded;
     private buildForIndex;
     protected createNewObject(): T;
@@ -14,3 +14,4 @@ export declare class ObjectBuilderBase<T, K extends keyof T> {
 }
 export declare class ObjectBuilder<T> extends ObjectBuilderBase<T, keyof T> {
 }
+//# sourceMappingURL=object-builder.d.ts.map

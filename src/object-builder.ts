@@ -17,7 +17,8 @@ export class ObjectBuilderBase<T, K extends keyof T> {
       const obj = this.createNewObject();
 
       this.fieldsToBuild.forEach((k) => {
-        obj[k] = this.values.get(k)(index);
+          // tslint:disable-next-line:no-non-null-assertion
+        obj[k] = this.values.get(k)!(index);
       });
 
       return obj;

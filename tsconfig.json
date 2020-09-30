@@ -1,15 +1,30 @@
 {
   "compilerOptions": {
-    "target": "ES5",
-    "module": "es2015",
-    "moduleResolution": "node",
+    "target": "es6",
+    "module": "ES2020",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
     "declaration": true,
-    "emitDecoratorMetadata": true,
+    "removeComments": true,
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": false,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "experimentalDecorators": true,
-    "lib": ["es2015"],
-    "outDir": "dist"
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "files": [
+  "include": [
     "src/index.ts"
   ],
   "exclude": [
