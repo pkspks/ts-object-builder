@@ -1,6 +1,6 @@
 {
   "name": "ts-object-builder",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "Simple Typesafe Object builder for Typescript",
   "main": "dist/umd/ts-object-builder.js",
   "module": "dist/mjs/ts-object-builder.mjs",
